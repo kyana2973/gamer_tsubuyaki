@@ -38,9 +38,9 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.user_name = params[:user_name]
     @user.introduction = params[:introduction]
-    @user.image_name = "#{@user.id}.jpg"
 
     if params[:image]
+      @user.image_name = "#{@user.id}.jpg"
       image = params[:image]
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
     end
