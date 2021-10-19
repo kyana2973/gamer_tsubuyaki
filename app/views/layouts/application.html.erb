@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>ゲーつぶ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <ul class="header_list">
+        <% if @current_user %>
+          <li class="current_user">
+              <%= link_to(@current_user.user_name, "/users/#{@current_user.id}") %>
+          </li>
+
+          <li class="top">
+            <%= link_to("トップへ", "/") %>
+          </li>
+
+          <li class="thread">
+            <%= link_to("集会場の作成", "/thread_creation") %>
+          </li>
+
+          <li class="logout">
+            <%= link_to("ログアウト", "/logout", {method: "post"}) %>
+          </li>
+
+        <% else %>
+
+          <li class="top">
+            <%= link_to("トップへ", "/") %>
+          </li>
+
+          <li class="login">
+            <%= link_to("ログイン", "/") %>
+          </li>
+
+          <li class="signup">
+            <%= link_to("ゲーマー登録", "/signup") %>
+          </li>
+
+        <% end %>
+      </ul>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

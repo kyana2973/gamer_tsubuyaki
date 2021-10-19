@@ -1,0 +1,23 @@
+<div class="signup_main">
+  <div class="signup_title">
+    <h1>よく来たな！ゲーマー登録をするのだ！</h1>
+  </div>
+
+  <div class="container">
+    <%= form_tag("/users_signup", {method: "post"}) do %>
+      <div class="user_name">
+        <p>ゲーマー名</p>
+        <input name="user_name" value="<%= @user.user_name %>"> 
+      </div>
+
+      <div class="user_password">
+        <p>パスワード</p>
+        <input name="password" value="<%= @user.password %>" type="password"> 
+      </div>
+
+      <div class="signup_btn">
+        <input type="submit" value="登録"> 
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="thread-show">
+  <div class="container">
+
+    <div class="thread-show-title">
+      <div class="show-game-name">
+        <%= @post.game_name %>
+      </div>
+
+      <div class="show-thread-name">
+        <%= @post.thread_name %></div>
+      </div>
+    </div>
+
+    <div class="tweet-form">
+      <%= form_tag("/tweet/#{@post.id}", {method: "post"}) do %>
+        <p>つぶやき</p>
+        <textarea class="tweet-text" name="tweet"></textarea>
+        <div class="tweet-btn">
+          <input type="submit" value="つぶやく">
+        </div>
+      <% end %>
+    </div>
+
+    <div class="tweets">
+      <%= will_paginate @tweets, :previous_label => "&lt 前へ", :next_label => "次へ &gt" %>
+        <% @tweets.each do |tweet| %>
+
+          <% user = User.find_by(id: tweet.user_id) %>
+
+          <div class="tweet-item">
+          
+            <div class="tweet-user-name">
+              <% if user.image_name %>
+
+                <div class="tweet-user-image">
+                  <img src="<%= "/user_images/#{user.image_name}" %>">
+                </div>
+
+              <% else %>
+
+                <div class="tweet-user-image">
+                  <img src="<%= "/user_images/default.jpg" %>">
+                </div>
+
+              <% end %>
+              
+              <%= link_to(user.user_name, "/users/#{user.id}") %>
+
+              <div class="tweet-created_at">
+                <%= tweet.created_at %>
+              </div>
+            </div>
+
+            <div class="tweet">
+              <p><%= tweet.tweet %></p>
+            </div>
+
+            <% if session[:user_id] %>
+              <% if user.id == @current_user.id %>
+                <%= form_tag("/tweet/#{tweet.id}/destroy", {method: "post"}) do %>
+                  <div class="tweet-destroy-btn">
+                    <input type="submit" value="削除">
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+
+        <% end %>
+      <%= will_paginate @tweets, :previous_label => "&lt 前へ", :next_label => "次へ &gt" %>
+    </div>
+
+  </div>
+</div>

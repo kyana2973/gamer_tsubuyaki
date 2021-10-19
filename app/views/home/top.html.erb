@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <div class="container">
+    <ul class="title">
+      <li>
+        <img src="/page_images/ゲーつぶヘッダー.jpg" class="title_image">
+      </li>
+      <li class="title_text">ゲーつぶ</li>
+      <li class="subtitle">〜ゲーマーによるゲームのつぶやき〜</li>
+    </ul>
+  </div>
+
+  <% if session[:user_id] == nil %>
+    <div class="login-form">
+      <%= form_tag("/login", {method: "post"}) do %>
+        <ul class="login-form-item">
+            <li class="login-user-name">
+              <p>ゲーマー名</p>
+              <input name="user_name">
+            </li>
+
+            <li class="login-password">
+              <p>パスワード</p>
+              <input name="password" type="password">
+            </li>
+
+            <li class="login-btn">
+              <input type="submit" value="ログイン">
+            </li>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="posts-index">
+    <div class="paginate">
+      <%=  will_paginate @posts, :previous_label => "&lt 前へ", :next_label => "次へ &gt" %>
+    </div>
+
+      <div class="container">
+        <% @posts.each do |post| %>
+          <div class="posts-index-item">
+            <div class="index-game-name">
+              <%= post.game_name %>
+            </div>
+
+            <div class="index-thread-name">
+              <%= link_to(post.thread_name, "/posts/#{post.id}") %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <div class="paginate">
+      <%=  will_paginate @posts, :previous_label => "&lt 前へ", :next_label => "次へ &gt" %>
+    </div>
+  </div>
+</div>

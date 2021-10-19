@@ -1,0 +1,39 @@
+<div class="update-profile">
+  <div class="container">
+    <div class="update-item">
+      <%= form_tag("/users/#{@current_user.id}/update", {multipart: true}) do %>
+        <div class="update-page-title">
+          ゲーマーの編集
+        </div>
+
+        <div class="update-image">
+          <p>プロフィール画像</p>
+          <input type="file" name="image">
+        </div>
+
+        <div class="update-name">
+          <p>ゲーマー名</p>
+          <input name="user_name" value="<%= @user.user_name %>">
+        </div>
+
+        <div class="update-introduction">
+          <p>自己紹介</p>
+          <textarea name="introduction"><%= @user.introduction %></textarea>
+        </div>
+
+        <div class="update-btns">
+          <div class="save-btn">
+            <input type="submit" value="保存">
+          </div>
+        </div>
+      <% end %>
+
+      <%= form_tag("/back/#{@user.id}", {method: "post"}) do %>
+          <div class="back-btn">
+            <input type="submit" value="戻る">
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

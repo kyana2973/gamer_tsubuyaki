@@ -1,0 +1,125 @@
+body {
+  width: 100%;
+}
+
+.flash {
+  text-align: center;
+  line-height: 36px;
+  height: 36px;
+  background-color: #eaeea2;
+}
+
+.profile {
+  height: 384px;
+  background: url("/page_images/ゲーつぶヘッダー.jpg");
+}
+
+.profile > .container {
+  padding-top: 20px;
+}
+
+.user-profile-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-image {
+  margin: 0 auto 0;
+}
+
+.user-image > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 6px solid #946c45;
+}
+
+.user-name {
+  margin: 0 auto 0;
+  font-size: 24px;
+  color: #946c45;
+  text-shadow: 1px 1px 1px black;
+}
+
+.user-introduction {
+  margin: 20px auto 0;
+  border: 2px solid #946c45;
+  border-radius: 10px;
+  max-width: 600px;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.user-introduction > p {
+  margin: 0;
+}
+
+.show-btns {
+  transform: translate(200%, 0);
+  margin: 10px auto 0;
+}
+
+.update-btn {
+  width: 42px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border: 2px solid #946c45;
+}
+
+.destroy-btn {
+  width: 42px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border: 2px solid #946c45;
+  transform: translate(120%, -100%);
+}
+
+.update-profile {
+  width: 100%;
+  background: url("/page_images/ゲーつぶヘッダー.jpg");
+  height: 384px;
+}
+
+.update-profile > .container {
+  margin: 0 auto 0;
+}
+
+.update-page-title {
+  font-size: 32px;
+  padding: 5px 0;
+  color: #946c45;
+  text-shadow: 2px 1px 1px black;
+}
+
+.update-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.update-image > p {
+  margin: 0;
+}
+
+.update-name > p {
+  margin: 0;
+}
+
+.update-introduction > p {
+  margin: 0;
+}
+
+.update-introduction > textarea {
+  width: 600px;
+  height: 150px;
+}
+
+.save-btn {
+  transform: translate(-2%, 0);
+}
+
+.back-btn {
+  margin: 0 auto 0;
+  transform: translate(50%, -100%);
+  width: 43px;
+}

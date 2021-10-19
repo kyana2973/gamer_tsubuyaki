@@ -1,0 +1,218 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: "Comic Sans MS","MS Sans Serif","ヒラギノ丸ゴ ProN","游ゴシック";
+}
+
+// -----------------------ヘッダー----------------------------
+header {
+  background-color: #a9a9a9;
+}
+.header_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.current_user {
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.top {
+  margin-left: auto;
+  padding: 10px;
+}
+
+.login {
+  padding: 10px;
+}
+
+.signup {
+  padding: 10px;
+}
+
+.thread {
+  padding: 10px;
+}
+
+.logout {
+  padding: 10px;
+}
+
+// -----------------------トップ----------------------------
+.wrapper > .container {
+  height: 394px;
+}
+
+.title {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 375px;
+  object-fit: cover;
+  position: relative;
+}
+
+.title_image {
+  width: 100%;
+  height: auto;
+  opacity: .9;
+}
+
+.title_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 72px;
+  letter-spacing: 9px;
+  color: #946c45;
+  text-shadow: 4px 2px 2px black;
+}
+
+.subtitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  font-size: 24px;
+  letter-spacing: 6px;
+  color: #946c45;
+  text-shadow: 2px 1px 1px black;
+}
+
+.posts-index > .container {
+  text-align: center;
+  // display: flex;
+  // flex-flow: column;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 2px auto 2px;
+  padding: 0;
+}
+
+.pagination > li {
+  padding: 0 5px 0;
+}
+
+.paginate {
+  text-align: center;
+}
+
+.posts-index-item {
+  padding-bottom: 10px;
+}
+
+.posts-index-item:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.posts-index-item:nth-child(even) {
+  background-color: #946c45;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-form-item {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin:0 ;
+  width: 200px;
+  border: 3px solid #946c45;
+  border-radius: 10px;
+  position: absolute;
+  top: 150px;
+  right: 7%;
+}
+
+.login-user-name > p {
+  padding: 0;
+  margin: 0;
+  color: #946c45;
+  text-shadow: 1px 1px 1px black;
+}
+
+.login-password > p {
+  padding: 0;
+  margin: 0;
+  color: #946c45;
+  text-shadow: 1px 1px 1px black;
+}
+
+.login-btn {
+  margin: 10px 0 10px;
+}
+
+// -----------------------ゲーマー登録----------------------------
+.signup_main {
+  padding: 80px 0 80px;
+  background: url("/page_images/ゲーつぶヘッダー.jpg");
+  color: #946c45;
+  text-shadow: 1px 1px 1px black;
+}
+
+.signup_title {
+  text-align: center;
+}
+
+.signup_title > h1 {
+  margin: 0;
+}
+
+.signup_main > .container {
+  text-align: center;
+}
+
+.user_name > p {
+  margin-bottom: 0;
+}
+
+.user_password > p {
+  margin-bottom: 0;
+}
+
+.signup_btn {
+  margin-top: 20px;
+}
+
+// -----------------------スレッド作成----------------------------
+.thread_creation_main {
+  padding: 80px 0 80px;
+  background: url("/page_images/ゲーつぶヘッダー.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #946c45;
+  text-shadow: 1px 1px 1px black;
+}
+
+.thread_creation_title {
+  text-align: center;
+}
+
+.thread_creation_main > .container {
+  text-align: center;
+}
+
+.game_name > p {
+  margin-bottom: 0;
+}
+
+.thread_name > p {
+  margin-bottom: 0;
+}
+
+.thread_creation_btn {
+  margin-top: 20px;
+}
