@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   end
 
   def thread_creation
-
+    @post = Post.new
   end
 
   def thread_create
@@ -17,6 +17,9 @@ class HomeController < ApplicationController
     if @post.save
       flash[:notice] = "集会場が出来たぞ！"
       redirect_to("/")
+    else
+      flash[:notice] = "どっちも入力するのじゃ"
+      render("home/thread_creation")
     end
   end
 

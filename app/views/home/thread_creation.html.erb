@@ -7,12 +7,12 @@
     <%= form_tag("/thread_create", {method: "post"}) do %>
       <div class="game_name">
         <p>ゲームの名前</p>
-        <input name="game_name"> 
+        <input name="game_name" value="<%= @post.game_name %>"> 
       </div>
 
       <div class="thread_name">
         <p>集会場の名前</p>
-        <input name="thread_name"> 
+        <input name="thread_name" value="<%= @post.thread_name %>"> 
       </div>
 
       <div class="thread_creation_btn">
